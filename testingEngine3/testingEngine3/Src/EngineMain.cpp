@@ -2,6 +2,9 @@
 #include <GLEW/glew.h>
 #include <GLFW/glfw3.h>
 #include <GLM/glm.hpp>
+#include <ASSIMP/Importer.hpp>
+#include <ASSIMP/scene.h>
+#include <ASSIMP/postprocess.h>
 int main() {
 
     GLFWwindow* window;
@@ -23,7 +26,6 @@ int main() {
 		std::cout << "Glew error" << std::endl;
 		return false;
 	}
-
 	while (!glfwWindowShouldClose(window))
 	{
 		glClear(GL_COLOR_BUFFER_BIT);
