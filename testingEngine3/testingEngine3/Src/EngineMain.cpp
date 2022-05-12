@@ -21,11 +21,22 @@ int main() {
 
 	glfwMakeContextCurrent(window);
 
+	Assimp::Importer import;
+
+
 	if (glewInit() != GLEW_OK) // tiene que ir despues de la creacion del contexto de glfw si o si
 	{
 		std::cout << "Glew error" << std::endl;
 		return false;
 	}
+
+
+	aiMaterial* mat = new aiMaterial();
+
+	aiTextureType type = (aiTextureType)0;
+
+	mat->GetTextureCount(type);
+
 	while (!glfwWindowShouldClose(window))
 	{
 		glClear(GL_COLOR_BUFFER_BIT);
